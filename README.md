@@ -172,7 +172,7 @@ qa_ai_bot/
 
 ### 🔗 Ссылка на бота
 
-[t.me/QA_AI_AssistantBot](https://t.me/QA_Ai_AssistantBot)
+[t.me/QA_Ai_AssistantBot](https://t.me/QA_Ai_AssistantBot)
 
 **👨‍💻 Разработал:**
 
