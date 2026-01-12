@@ -4,6 +4,10 @@ from aiogram.fsm.state import State, StatesGroup
 import logging
 import html
 from messages import MENU_MSG, get_main_menu
+try:
+    from ai_service import ai_service
+except ImportError:
+    ai_service = None
 
 logger = logging.getLogger(__name__)
 
@@ -444,10 +448,32 @@ async def handle_choice(message: Message, state: FSMContext):
 
     if message.text == "✨ Создать ещё баг-репорт":
         await bug_report_command(message, state)
-    elif message.text == "Назад в меню":
-        await state.clear()
+Add AI integration to bug_report_creator.py        await state.clear()
         await message.answer(MENU_MSG, reply_markup=get_main_menu())
     else:
         await message.answer("Пожалуйста, используй кнопки")
 
 
+
+
+
+# AI Integration Functions
+async def improve_bug_report_with_ai(message: Message, state: FSMContext, ai_model: str = "openai"):
+    """Improve bug report using AI"""
+    if not ai_service:
+        await message.answer("❌ AI service not available", reply_markup=get_main_menu())
+        return
+    
+    try:
+        data = await state.get_data()
+        await message.answer("⏳ Analyzing bug report with AI...", parse_mode="HTML")
+        
+        improved = ai_service.improve_bug_report(data, ai_model)
+        
+        await message.answer(
+            f"✨ <b>Improved Bug Report (AI {ai_model.upper()}):</b>\n\n{improved}",
+            parse_mode="HTML"
+        )
+    except Exception as e:
+        logger.error(f"AI improvement error: {e}", exc_info=True)
+        await message.answer(f"❌ Error improving bug report: {str(e)}")
