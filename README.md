@@ -167,13 +167,14 @@ python main.py
 qa_ai_bot/
 ├── logs/                       # Директория для логов
 ├── plugins/                    # Директория с плагинами
-│   ├── bug_report_creator.py   # Создание баг-репортов
-│   ├── file_generator.py       # Создание файлов
-│   ├── json_validator.py       # Проверить JSON
-│   ├── pairwise_tester.py      # Создание Pairwise тестов
-│   ├── payment_generator.py    # Создание платежных данных
-│   ├── test_case_template.py   # Создание тест-кейса
-│   └── test_data_generator.py  # Создание тестовых данных
+│   └── api_validator.py        # Проверка и валидация API по URL
+│   └── data_validator.py       # Проверка и валидация JSON, XML, YAML
+│   └── docs_creator.py         # Создание документации (тест-кейс, чек-лист, баг-репорт)
+│   └── file_generator.py       # Создание тестовых файлов различных форматов
+│   └── pairwise_tester.py      # Создание оптимальных тестовых комбинаций
+│   └── sql_generator.py        # Генерация SQL CRUD запросов
+│   └── test_data_generator.py  # Создание тестовых данных пользователей и банковских карт
+│   └── timestamp_converter.py  # Конвертация Timestamp в дату и время
 ├── ai_service.py               # Сервис для работы с AI-моделями
 ├── .env                        # Админ и токены
 ├── config.py                   # Конфигурация
