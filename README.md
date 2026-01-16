@@ -28,13 +28,13 @@
 
 ![file](screenshots/file.png)
 
-#### Создание карты
+#### Валидация и проверка API
 
-![card](screenshots/card.png)
+![card](screenshots/api.png)
 
-#### Создание тест-кейса
+#### Создание документации
 
-![testcase](screenshots/testcase.png)
+![testcase](screenshots/docs.png)
 
 ## 🛠 Функционал
 
