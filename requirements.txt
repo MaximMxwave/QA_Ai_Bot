@@ -11,3 +11,7 @@ pyyaml>=6.0
 xmltodict>=0.13.0
 lxml>=4.9.0
 
+# AI Models Integration
+openai>=1.3.0           # для OpenAI и DeepSeek (совместимость)
+anthropic>=0.7.0        # для Claude
+deepseek-client>=0.1.0  # дополнительно для DeepSeek (опционально)
